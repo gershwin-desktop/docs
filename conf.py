@@ -19,9 +19,9 @@ import os
 
 # -- Project information -----------------------------------------------------
 
-project = 'helloSystem'
-copyright = '2020-2021, probono'
-author = 'probono'
+project = 'Gershwin Desktop'
+copyright = '2020-2026, The Gershwin Desktop Authors'
+author = 'The Gershwin Desktop Authors'
 
 # The full version, including alpha/beta/rc tags
 release = '' # 'experimental' # We don't want this in the HTML title
@@ -66,7 +66,7 @@ html_theme = 'sphinx_rtd_theme'
 
 # specify a fallback value for local builds
 # FIXME: find a way to use relative URLs instead of absolute URLs to better support URLs
-GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY", "helloSystem/docs")
+GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY", "gershwin-desktop/docs")
 GITHUB_REPO_OWNER, GITHUB_REPO_NAME = GITHUB_REPOSITORY.split("/")[0:2]
 
 # Display "Edit on GitHub"
@@ -79,7 +79,7 @@ html_context = {
 
 html_show_copyright = False
 html_show_sphinx = False
-html_logo = "_static/hello_logo.png"
+# html_logo = "_static/hello_logo.png"
 
 epub_cover = ('_static/hello_logo.png', 'epub-cover.html')
 
