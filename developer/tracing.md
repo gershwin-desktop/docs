@@ -1,5 +1,9 @@
 # Tracing with DTrace/dtruss
 
+:::{note}
+This applies to FreeBSD and GhostBSD.
+:::
+
 The `dtruss` command line tool can be used to examine what a running process is doing. Other than, e.g., `strace` on Linux, `dtruss` can be used to watch already-running processes. This makes it more suitable to watch processes that have been launched by, e.g., the `launch` command.
 
 ```console
