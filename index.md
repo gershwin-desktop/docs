@@ -1,18 +1,12 @@
-```{image} https://raw.githubusercontent.com/helloSystem/hello/1d1e69be8a689c5e0a176df821c14f0b49b241a4/branding/hello_variation.svg
-:alt: The helloSystem logo
-:width: 300px
-:align: center
-```
-
 ```{eval-rst}
 .. centered:: Willkommen • Welcome • Bienvenue • Benvenuto • Bienvenido • ようこそ • Mabuhay • Tervetuloa • Välkommen • Добро пожаловать • Hoş geldiniz • Bonvenon • 歡迎 • Ласкаво просимо • 欢迎
 ```
 
-# hello
+# Gershwin Desktop
 
-__helloSystem__ is a desktop system for creators with a focus on simplicity, elegance, and usability. Its design follows the "Less, but better" philosophy. It is intended as a system for "mere mortals", welcoming to switchers from the Mac. [FreeBSD](https://www.freebsd.org/) is used as the core operating system. Please refer to [https://github.com/helloSystem/hello](https://github.com/helloSystem/hello) if you would like to learn more about the ideas and principles behind hello.
+**Gershwin** is a desktop experience for creators with a focus on simplicity, elegance, and usability. Its design follows the "Less, but better" philosophy. It is intended as a system for "mere mortals", welcoming to switchers from other operating sysgems
 
-![Screenshot](https://github.com/helloSystem/hello/blob/master/screenshots/20220121-desktop-0.8.png?raw=true)
+
 
 ```{toctree}
 ---
@@ -24,8 +18,6 @@ glob: true
 
 user/getting-started
 user/components
-user/troubleshooting
-user/feedback
 ```
 
 ```{toctree}
