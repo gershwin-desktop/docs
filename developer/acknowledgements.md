@@ -12,12 +12,12 @@ jmaloney on irc (#Gershwin)
 __[probonopd](https://github.com/probonopd)__
 @probonopd on twitter
 
-## Cirrus CI
-[https://cirrus-ci.com/](https://cirrus-ci.com/)
-* Providing continuous build infrastructure
-
-* ## Evan Fiddes
+## Evan Fiddes
 __[okt](https://github.com/okt)__
 okt on irc (#Gershwin)
 * WindowManager improvements (e.g., Rounded corners, proper resizing) 
 * Airwaves application
+
+## Cirrus CI
+[https://cirrus-ci.com/](https://cirrus-ci.com/)
+* Providing continuous build infrastructure
