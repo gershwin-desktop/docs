@@ -1,6 +1,6 @@
 # User Experience Guidelines
 
-Since helloSystem is intended to be friendly and welcoming to switchers from the Mac, it is important to understand the underlying concepts and design considerations that went into the Mac. We are not aiming to create a 1:1 replica, but something that is generally consistent with the underlying general user experience (UX) philosophy, which has been openly documented.
+Since Gershwin is intended to be friendly and welcoming to switchers, it is important to understand the underlying concepts and design considerations that went into the desktop metaphor as we know it. We are not aiming to create a 1:1 replica, but something that is generally consistent with the underlying general user experience (UX) philosophy, which has been openly documented.
 
 ## Macintosh Human Interface Guidelines
 
@@ -36,4 +36,11 @@ Menus hidden behind hamburger menus have been [proven to hurt user experience]( 
 
 ## Avoiding configuration options
 
-Configuration options add complexity to software, increase the test matrix, and make software harder to support (e.g., over the phone) because no two systems behave exactly the same way depending on how they were configured. Hence in helloSystem we want to avoid unnecessary user-facing configuration options whenever possible. We take great care to set sensible defaults and make things "just work" as expected (in line with our design objectives) out of the box, without the need for configuration. KDE Plasma is recommended as an alternative for users who wish to configure and customize every aspect of the system.
+Configuration options add complexity to software, increase the test matrix, and make software harder to support (e.g., over the phone) because no two systems behave exactly the same way depending on how they were configured. Hence in Gershwin we want to avoid unnecessary user-facing configuration options whenever possible. We take great care to set sensible defaults and make things "just work" as expected (in line with our design objectives) out of the box, without the need for configuration. KDE Plasma is recommended as an alternative for users who wish to configure and customize every aspect of the system.
+
+## Metrics
+
+Gershwin strives to stay metrically compatible with existing application UIs, similar how Arial was designed to be metrically compatible with Helvetica. Metrics are defined in https://github.com/gershwin-desktop/gershwin-eau-theme/blob/main/AppearanceMetrics.h.
+
+Here is an overview:
+
