@@ -1,6 +1,10 @@
 # Graphics hardware autoconfiguration
 
-helloSystem uses `initgfx` for the automatic configuration of the graphics hardware in your computer.
+gershwin-on-ghostbsd may use `initgfx` in the future for the automatic configuration of the graphics hardware in your computer.
+
+:::{note}
+As of January 25, 2026 this is not integrated yet.
+:::
 
 ## Theory of operation
 
