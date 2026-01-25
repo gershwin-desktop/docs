@@ -1,15 +1,8 @@
 # Desktop
 
-The __Desktop__ preferences application allows you to customize the behavior of your computer's desktop.
+The **Desktop** settings, managed within Workspace, allow you to customize your desktop environment.
 
-## Background
-
-In this section of the __Desktop__ preferences application, you can select a background color and an optional background image. If an image is selected, you can choose how it should be scaled on the screen.
-
-## Label Text
-
-In this section of the __Desktop__ preferences application, you can select a font and color for the text beneath icons on the desktop.
-
-## Advanced
-
-Under the {guilabel}`advanced` tab of the __Desktop__ preferences application, advanced users can adjust additional aspects of the behavior of the desktop. Most users should leave the defaults. This tab may go away in a future version.
+## Features
+* **Wallpaper**: Select a background image for your desktop.
+* **Icon Arrangement**: Choose how icons are displayed and aligned on the desktop.
+* **Dock Configuration**: Configure the behavior and appearance of the integrated dock.

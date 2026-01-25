@@ -1,6 +1,6 @@
 # Windows
 
-helloSystem provides a graphical desktop experience that should be familiar to users of existing desktop operating systems.
+Gershwin provides a graphical desktop experience that should be familiar to users of existing desktop operating systems.
 
 ## Traffic lights
 

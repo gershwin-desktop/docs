@@ -1,6 +1,6 @@
 # Utilities
 
-helloSystem comes with the following utilities, each of which are described in this section:
+Gershwin comes with the following utilities, each of which are described in this section:
 
 ```{toctree}
 ---

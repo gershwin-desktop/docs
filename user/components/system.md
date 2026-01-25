@@ -1,6 +1,6 @@
 # System components
 
-helloSystem comes with the following system components, each of which are described in this section:
+Gershwin comes with the following system components, each of which are described in this section:
 
 ```{toctree}
 ---

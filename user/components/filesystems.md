@@ -1,8 +1,8 @@
 # Filesystems
 
-helloSystem uses the OpenZFS for the boot disk.
+Gershwin uses OpenZFS for the boot disk.
 
-Additionally, the following filesystems are supported in helloSystem, but it cannot be started from those:
+Additionally, the following filesystems are supported in Gershwin, but it cannot be started from those:
 
 * exFAT (Windows) _once available in quarterly packages_
 * NTFS (Windows; read-write support)
