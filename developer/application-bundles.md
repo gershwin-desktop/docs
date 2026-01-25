@@ -1,6 +1,6 @@
 # Application Bundles
 
-helloSystem uses __application bundles__ to manage native applications. Whenever possible, application bundles are used. XDG-style `.desktop` files are considered legacy and should be avoided.
+Gershwin uses __application bundles__ to manage native applications. Whenever possible, application bundles are used. XDG-style `.desktop` files are considered legacy and should be avoided.
 
 ## Benefits
 
@@ -15,56 +15,13 @@ Applications shipped as application bundles can
 * Easily be distributed (e.g., in archives like zip files or in disk images) without the need for packaging
 * Easily be understood by switchers coming from other operating systems with similar application distribution formats
 
-## Application bundle formats
-
-### `.app` bundles
-
-helloSystem supports simplified GNUstep-style `.app` bundles.
-
-Minimal requirements:
-
-```text
-./Application.app
-./Application.app/Application <-- (link to) the executable to be launched when Application.app is double clicked
-./Application.app/Resources/Application.png <-- the application icon (png format)
-./Application.app/Resources/can-open <-- optional, MIME types the application can open, separated by `;`
-```
-
-In order to realize the full intended functionality, additional metadata may be required (such as localized application name, version, supported file formats, etc.). Possibly the GNUstep metadata format is sufficient for this.
-
-### `.AppDir` bundles
-
-helloSystem supports simplified ROX-style `.AppDir` bundles.
-
-Minimal requirements:
-
-```text
-./Application.AppDir
-./Application.AppDir/AppRun <-- (link to) the executable to be launched when Application.app is double clicked
-./Application.AppDir/.DirIcon <-- the application icon (png format)
-```
-
-In order to realize the full intended functionality, additional metadata may be required (such as localized application name, version, supported file formats, etc.). Possibly the ROX AppDir specification is not sufficient for this and may need to be amended (to be determined).
-
 ### Wrappers for legacy packages
 
-helloSystem supports applications that are not shipped in bundle formats yet. These can be bridged by __wrapper bundles__, application bundles that merely launch (but do not contain) the payload application (which may be installed in traditional ways).
+Gershwin supports applications that are not shipped in bundle formats yet. These can be bridged by __wrapper bundles__, application bundles that merely launch (but do not contain) the payload application (which may be installed in traditional ways).
 
-A __desktop2app__ tool ships with helloSystem that automates the creation of such wrappers.
+The __appwrap__ tool ships with Gershwin that automates the creation of such wrappers.
 
 Please note that the use of wrapper bundles is discouraged and is only available as a bridge technology for backward compatibility with existing application packages.
-
-## Building application bundles
-
-Here is a real-world example on how to build an application bundle for a Qt application written in C++ using GitHub and [Cirrus CI](https://cirrus-ci.com/):
-
-https://github.com/helloSystem/QHexEdit
-
-The application gets compiled and uploaded in a fully automated process.
-
-The resulting application bundle is provided for download in zipped form on GitHub Releases.
-
-Please see the [`.cirrus.yml`](https://github.com/helloSystem/QHexEdit/blob/main/.cirrus.yml) file for details.
 
 ### Making an application load privately bundled libraries
 
