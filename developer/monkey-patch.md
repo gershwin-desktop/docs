@@ -1,6 +1,6 @@
-# Monkey Patching
+# Monkey Patching (gershwin-on-ghostbsd)
 
-Starting with helloSystem 0.7.0 it is possible to [monkey patch](https://en.wikipedia.org/wiki/Monkey_patch) the running Live ISO as early in the boot process as possible so that developers can make changes to all aspects of an existing Live ISO without having to re-create it and without having to write the ISO to a device each time a change is to be tested.
+It is possible to [monkey patch](https://en.wikipedia.org/wiki/Monkey_patch) the running gershwin-on-ghostbsd Live ISO as early in the boot process as possible so that developers can make changes to all aspects of an existing Live ISO without having to re-create it and without having to write the ISO to a device each time a change is to be tested.
 
 With that, it allows for a very rapid development-test cycle for Live ISOs.
 
@@ -12,7 +12,7 @@ This feature is currently under active development and its usage is still subjec
 
 Since an ISO file is read-only by design, the monkey patch feature allows to insert code into the early boot process from another loacation, e.g., from a USB stick.
 
-If the user tells the system to perform the monkey patching, the early boot scripts in helloSystem execute code provided by the user (outside of the ISO), then continues the normal boot process.
+If the user tells the system to perform the monkey patching, the early boot scripts in gershwin-on-ghostbsd execute code provided by the user (outside of the ISO), then continues the normal boot process.
 
 ## Creating the monkey patch volume
 
@@ -47,7 +47,7 @@ echo "HELLO DEVELOPERS"
 
 # Show a message to users in the boot process
 # This should be done only in rare cases since it destroys
-# the helloSystem zero-text boot experience
+# the gershwin-on-ghostbsd zero-text boot experience
 echo "HELLO MERE MORTALS" > /dev/console
 
 # Give users a chance to see the message
@@ -58,21 +58,6 @@ HERE="$(dirname "$(readlink -f "${0}")")"
 cp ${HERE}/mount_md /usr/local/sbin/mount_md
 chmod +x /usr/local/sbin/mount_md
 ```
-
-A particularly effective way to debug the late boot process (after Xorg has started) is:
-
-```sh
-$ mv /usr/local/bin/start-hello /usr/local/bin/start-hello.real
-$ cat > /usr/local/bin/start-hello << EOF
-#!/bin/sh
-
-xterm -maximized start-hello.real
-# xterm -maximized
-EOF
-$ chmod +x /usr/local/bin/start-hello*
-```
-
-This will allow you to see the commands in `start-hello.real` as they are executed.
 
 ## Booting a Live ISO running a different `init_script`
 
