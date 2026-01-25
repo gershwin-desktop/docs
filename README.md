@@ -1,6 +1,6 @@
-# hello Documentation
+# Gershwin Documentation
 
-This repository builds the [documentation](https://hellosystem.github.io/docs/) for hello.
+This repository builds the [documentation](https://gershwin-desktop.github.io/docs/) for Gershwin Desktop.
 
 It uses Sphinx, recommonmark, and GitHub Actions to produce documentation from the Markdown source files in this repository.
 
@@ -14,7 +14,7 @@ Use a local development server that regenerates the output whenever the input ch
 ```sh
 sudo pkg install -y py37-pip gmake # on FreeBSD, e.g., on helloSystem
 pip-3.7 install -r requirements.txt
-export GITHUB_REPOSITORY="helloSystem/docs"
+export GITHUB_REPOSITORY="gershwin-desktop/docs"
 export PATH=~/.local/bin/:$PATH
 gmake watch
 ```
@@ -26,9 +26,9 @@ Now open http://127.0.0.1:8000 in a web browser. It will be regenerated and refr
 One can also generate documentation in various output formats locally:
 
 ```sh
-sudo pkg install -y py37-pip gmake # on FreeBSD, e.g., on helloSystem
+sudo pkg install -y py37-pip gmake # on FreeBSD
 pip-3.7 install -r requirements.txt
-export GITHUB_REPOSITORY="helloSystem/docs"
+export GITHUB_REPOSITORY="gershwin-desktop/docs"
 export PATH=~/.local/bin/:$PATH
 gmake html
 gmake epub
