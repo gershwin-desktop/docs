@@ -31,3 +31,7 @@ jobs:
         run: |
           wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
           bash ./upload.sh _build/epub/*.epub
+
+    permissions:
+      actions: read
+      contents: write
