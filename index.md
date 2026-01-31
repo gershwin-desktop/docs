@@ -48,16 +48,13 @@ developer/binary-compatibility
 developer/applications
 developer/application-bundles
 developer/menu
-developer/filer-context-menus
 developer/developer-tools
-developer/midi
 developer/specifications
 developer/contributing
 developer/building
 developer/monkey-patch
 developer/tracing
 developer/localization
-developer/ports
 developer/base
 developer/man
 developer/rpi
