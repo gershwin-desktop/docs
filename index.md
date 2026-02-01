@@ -42,7 +42,6 @@ glob: true
 developer/ux-guidelines
 developer/architecture
 developer/boot
-developer/geom_rowr
 developer/graphics
 developer/binary-compatibility
 developer/applications
@@ -50,16 +49,17 @@ developer/application-bundles
 developer/menu
 developer/developer-tools
 developer/specifications
-developer/contributing
 developer/building
 developer/monkey-patch
 developer/tracing
 developer/localization
 developer/base
 developer/man
+developer/uibridge
 developer/rpi
 developer/linux
 developer/distributions
+developer/contributing
 developer/acknowledgements
 developer/contact
 
