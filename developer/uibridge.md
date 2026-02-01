@@ -5,7 +5,7 @@ You (or your AI agents) can use it to programmatically explore, control, and tes
 
 Typical workflow: Discover running apps → attach_app → get_full_tree / find_widgets → invoke_selector or simulate X11 input → watch_app to monitor changes.
 
-## UIBridge for AI agents (e.g., in VSCode with GitHub Copilot)
+## UIBridge for AI agents
 
 What agents can do
 - **Discover and attach to running apps** (list_running_apps → attach_app).
@@ -28,11 +28,37 @@ Typical agent workflow
 5. tools/call watch_app (enabled) → receive notifications/ui_event and confirm outcome.
 6. If needed, run lldb_exec for deep debugging or read_file_content for config/log checks.
 
-Note
-- Server and target must run under compatible user privileges (root vs user affects attachability).
+:::{note}
+`UIBridgeServer` and target application must run under compatible user privileges (root vs user affects attachability).
+:::
 
 Use cases
 - End‑to‑end UI testing and regression checks driven by agents.
 - Autonomous task execution (e.g., “Open X, perform Y, verify Z”).
 - Accessibility and layout audits using absolute coordinates and full tree inspection.
 - Assisted debugging workflows inside VS Code with an LLM orchestrator.
+
+##  Installation in VSCode
+
+* Click on the "tools" icon in the text box that says "Describe what to build next" (where you enter text prompts)
+* Click on the MCP icon in the "Condfigure Tools" popover (the leftmost of the three icons in the upper right hand corner of the popover)
+* Select "Command (stdio)"
+* Enter `/System/Library/Tools/UIBridgeServer`
+* Enter a name, e.g., `uibridge`
+* On he left-hand side of VSCode, in the Extensions tab, you should now see the `uibridge` as an installed MCP server
+* You can start, restart, view logs from there using the cog icon
+
+Alternatively, you can add `~/.config/Code/User/mcp.json`:
+
+```
+{
+	"servers": {
+		"uibridge": {
+			"type": "stdio",
+			"command": "/System/Library/Tools/UIBridgeServer",
+			"args": []
+		}
+	},
+	"inputs": []
+}
+```
