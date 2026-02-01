@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UIBridge &mdash; Gershwin Desktop  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Raspberry Pi" href="rpi.html" />
+    <link rel="prev" title="Writing man pages" href="man.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Gershwin Desktop
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/components.html">Getting to know the system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reviewer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reviewer/guide.html">Reviewer Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ux-guidelines.html">User Experience Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">Graphics hardware autoconfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary-compatibility.html">Binary Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application-bundles.html">Application Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Global Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer-tools.html">Developer Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building.html">Building Gershwin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monkey-patch.html">Monkey Patching (gershwin-on-ghostbsd)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracing.html">Tracing with DTrace/dtruss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localization.html">Localization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="man.html">Writing man pages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">UIBridge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#uibridge-for-ai-agents">UIBridge for AI agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-in-vscode">Installation in VSCode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rpi.html">Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributions.html">Note to distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gershwin Desktop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">UIBridge</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gershwin-desktop/docs/blob/main/developer/uibridge.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="uibridge">
+<h1>UIBridge<a class="headerlink" href="#uibridge" title="Permalink to this heading"></a></h1>
+<p>UIBridge is a <a class="reference external" href="https://en.wikipedia.org/wiki/Model_Context_Protocol">Model Context Protocol (MCP)</a> server for automating and inspecting GNUstep applications.
+You (or your AI agents) can use it to programmatically explore, control, and test real UI state and user-flows.</p>
+<p>Typical workflow: Discover running apps → attach_app → get_full_tree / find_widgets → invoke_selector or simulate X11 input → watch_app to monitor changes.</p>
+<div class="section" id="uibridge-for-ai-agents">
+<h2>UIBridge for AI agents<a class="headerlink" href="#uibridge-for-ai-agents" title="Permalink to this heading"></a></h2>
+<p>What agents can do</p>
+<ul class="simple">
+<li><p><strong>Discover and attach to running apps</strong> (list_running_apps → attach_app).</p></li>
+<li><p><strong>Inspect UI state</strong> (get_root, get_full_tree, get_object_details) and map UI widgets to absolute screen coordinates.</p></li>
+<li><p><strong>Find and wait for widgets or text</strong> (find_widgets, wait_for_object, wait_for_text) even when modal dialogs are present.</p></li>
+<li><p><strong>Drive apps</strong> at multiple layers: invoke_selector / invoke_menu_item (high level), and x11_mouse_move / x11_click / x11_type (low level).</p></li>
+<li><p><strong>Monitor live changes</strong> with notifications/ui_event (watch_app) to let agents react to UI events and adjust plans.</p></li>
+<li><p><strong>Run diagnostics</strong> and <strong>deep-debugging</strong> (list_files, read_file_content, lldb_exec).</p></li>
+</ul>
+<p>How this integrates with VS Code and agents</p>
+<ul class="simple">
+<li><p>VSCode extensions call the server via MCP (tools/call) so an agent can query tools, call them, and consume JSON responses.</p></li>
+<li><p>Agents use the server as a grounding layer: plan (LLM) → probe UI (UIBridge) → choose action → execute → observe results → iterate.</p></li>
+<li><p>Prompts and prebuilt “assistant” prompts (prompts/list, prompts/get) provide structured guidance for common tasks (inspect_ui, automate_task, debug_ui_flow).</p></li>
+</ul>
+<p>Typical agent workflow</p>
+<ol class="arabic simple">
+<li><p>tools/call list_running_apps → pick target PID or service name.</p></li>
+<li><p>tools/call attach_app → set server currentPID.</p></li>
+<li><p>tools/call get_full_tree → analyze UI structure and find targets (find_widgets).</p></li>
+<li><p>Execute action (invoke_selector or x11_click / invoke_menu_item).</p></li>
+<li><p>tools/call watch_app (enabled) → receive notifications/ui_event and confirm outcome.</p></li>
+<li><p>If needed, run lldb_exec for deep debugging or read_file_content for config/log checks.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">UIBridgeServer</span></code> and target application must run under compatible user privileges (root vs user affects attachability).</p>
+</div>
+<p>Use cases</p>
+<ul class="simple">
+<li><p>End‑to‑end UI testing and regression checks driven by agents.</p></li>
+<li><p>Autonomous task execution (e.g., “Open X, perform Y, verify Z”).</p></li>
+<li><p>Accessibility and layout audits using absolute coordinates and full tree inspection.</p></li>
+<li><p>Assisted debugging workflows inside VS Code with an LLM orchestrator.</p></li>
+</ul>
+</div>
+<div class="section" id="installation-in-vscode">
+<h2>Installation in VSCode<a class="headerlink" href="#installation-in-vscode" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Click on the “tools” icon in the text box that says “Describe what to build next” (where you enter text prompts)</p></li>
+<li><p>Click on the MCP icon in the “Condfigure Tools” popover (the leftmost of the three icons in the upper right hand corner of the popover)</p></li>
+<li><p>Select “Command (stdio)”</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">/System/Library/Tools/UIBridgeServer</span></code></p></li>
+<li><p>Enter a name, e.g., <code class="docutils literal notranslate"><span class="pre">uibridge</span></code></p></li>
+<li><p>On he left-hand side of VSCode, in the Extensions tab, you should now see the <code class="docutils literal notranslate"><span class="pre">uibridge</span></code> as an installed MCP server</p></li>
+<li><p>You can start, restart, view logs from there using the cog icon</p></li>
+</ul>
+<p>Alternatively, you can add <code class="docutils literal notranslate"><span class="pre">~/.config/Code/User/mcp.json</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;servers&quot;</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">&quot;uibridge&quot;</span><span class="p">:</span> <span class="p">{</span>
+			<span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;stdio&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;/System/Library/Tools/UIBridgeServer&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[]</span>
+		<span class="p">}</span>
+	<span class="p">},</span>
+	<span class="s2">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="man.html" class="btn btn-neutral float-left" title="Writing man pages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rpi.html" class="btn btn-neutral float-right" title="Raspberry Pi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

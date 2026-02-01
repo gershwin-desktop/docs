@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raspberry Pi &mdash; Gershwin Desktop  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Note to distributions" href="distributions.html" />
+    <link rel="prev" title="UIBridge" href="uibridge.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Gershwin Desktop
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/components.html">Getting to know the system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reviewer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reviewer/guide.html">Reviewer Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ux-guidelines.html">User Experience Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">Graphics hardware autoconfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary-compatibility.html">Binary Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application-bundles.html">Application Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Global Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer-tools.html">Developer Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building.html">Building Gershwin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monkey-patch.html">Monkey Patching (gershwin-on-ghostbsd)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracing.html">Tracing with DTrace/dtruss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localization.html">Localization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="man.html">Writing man pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uibridge.html">UIBridge</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Raspberry Pi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#freebsd">FreeBSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#raspberry-pi-os-debian">Raspberry Pi OS (Debian)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#devuan">Devuan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instructions">Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="distributions.html">Note to distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gershwin Desktop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Raspberry Pi</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gershwin-desktop/docs/blob/main/developer/rpi.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="raspberry-pi">
+<h1>Raspberry Pi<a class="headerlink" href="#raspberry-pi" title="Permalink to this heading"></a></h1>
+<p>Gershwin is known to build and run very well on the Raspberry Pi 5/500. It builds in acceptable time and is usable well on the Raspberry Pi 4. It might build (untested) and is usable for light tasks on Raspberry Pi 3 and Raspberry Pi Zero 2 (the latter has only 256 MB of RAM).</p>
+<div class="section" id="freebsd">
+<h2>FreeBSD<a class="headerlink" href="#freebsd" title="Permalink to this heading"></a></h2>
+<p>FreeBSD 15 seemingly doesn’t have good support for Raspberry Pi 5/500 yet (to be verified). Hence we recommend Linux (see below) for these until they are supported better by FreeBSD.</p>
+<p>Known to build on FreeBSD 15 on Raspberry Pi 4. The resulting system can also run on Raspberry Pi 3 and Raspberry Pi Zero 2.</p>
+</div>
+<div class="section" id="raspberry-pi-os-debian">
+<h2>Raspberry Pi OS (Debian)<a class="headerlink" href="#raspberry-pi-os-debian" title="Permalink to this heading"></a></h2>
+<p>Official Raspberry Pi OS image. If you use the desktop version, then LoginWindow will give you the option to log into the Raspberry Pi OS desktop or into the Gershwin desktop.</p>
+</div>
+<div class="section" id="devuan">
+<h2>Devuan<a class="headerlink" href="#devuan" title="Permalink to this heading"></a></h2>
+<p>https://arm-files.devuan.org/RaspberryPi%20Latest%20Builds/, file <code class="docutils literal notranslate"><span class="pre">rpi-5-devuan-excalibur-*-arm64-ext4-*.zip</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As of January 25, 2026 this in known to be broken.</p>
+</div>
+<p>SSH is preconfigured and enabled on the Devuan images.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">devuan</span><span class="nd">@devuanpi</span><span class="o">.</span><span class="n">local</span> <span class="c1"># Password: devuan</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this heading"></a></h2>
+<p>Using the Raspberry Pi Imager tool, flash the OS image file to a microSD card (it creates the partitions automatically).</p>
+<p>The rest is done via SSH, which is preconfigured on the Devuan image.</p>
+<p>Then follow https://github.com/gershwin-desktop/gershwin-build standard procedure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Get the rest of the requirements for building</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gershwin</span><span class="o">-</span><span class="n">desktop</span><span class="o">/</span><span class="n">gershwin</span><span class="o">-</span><span class="n">build</span><span class="o">.</span><span class="n">git</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">gershwin</span><span class="o">-</span><span class="n">build</span>
+<span class="n">sudo</span> <span class="o">./</span><span class="n">bootstrap</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">./</span><span class="n">checkout</span><span class="o">.</span><span class="n">sh</span>
+<span class="c1"># Build and install Gershwin from sources</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>Finally, run <code class="docutils literal notranslate"><span class="pre">/System/Library/Scripts/SystemPrepare.sh</span></code>. It will configure the system to boot straight into Gershwin Desktop. Reboot the system when it is done.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="uibridge.html" class="btn btn-neutral float-left" title="UIBridge" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="distributions.html" class="btn btn-neutral float-right" title="Note to distributions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
