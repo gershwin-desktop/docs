@@ -62,3 +62,8 @@ Alternatively, you can add `~/.config/Code/User/mcp.json`:
 	"inputs": []
 }
 ```
+Now you can use instructions like 
+
+> Start MyApplication, click on "Continue", make sure the text "Done" appears. Keep fixing the code and iterating until it works
+
+in Copilot.
