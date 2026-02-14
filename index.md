@@ -2,6 +2,8 @@
 .. centered:: Willkommen • Welcome • Bienvenue • Benvenuto • Bienvenido • ようこそ • Mabuhay • Tervetuloa • Välkommen • Добро пожаловать • Hoş geldiniz • Bonvenon • 歡迎 • Ласкаво просимо • 欢迎
 ```
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed66a2bd-9f53-4901-b189-822c551a6bdc" />
+
 # Gershwin Desktop
 
 **Gershwin** is a desktop experience for creators with a focus on simplicity, elegance, and usability. Its design follows the "Less, but better" philosophy. It is intended as a system for "mere mortals", welcoming to switchers from other operating sysgems
