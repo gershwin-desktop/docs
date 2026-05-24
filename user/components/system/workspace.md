@@ -30,8 +30,8 @@ run PowerShell as Administrator, then run:
 Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 Start-Service sshd
 Set-Service -Name sshd -StartupType Automatic
-Get-Service sshd
 ```
 * Optionally if you do not have a password set for your Windows user, set `PermitEmptyPasswords yes` in `%programdata%\ssh\sshd_config` which is `C:\ProgramData\ssh\sshd_config` usually (need to do as an Administrator)
 * Install Bonjour for Windows. It comes with iTunes for Windows but can also be installed standalone from [here](https://github.com/manfred-mueller/Bonjour-Installer/releases) (NOTE: Potentially https://support.apple.com/en-us/106380 also works instead; still to be tested.)
-* To advertise the sshd server on the network, run `dns-sd -R "MyWindowsBox" _sftp-ssh._tcp local 22` on the Windows machine. TODO: Find a way to turn this into a service that gets started when Windows starts.
+* To advertise the sshd server on the network, run `dns-sd -R "MyWindowsBox" _sftp-ssh._tcp local 22` on the Windows machine. TODO: Find a way to turn this into a service that gets started when Windows starts. Replace "MyWindowsBox" with your computer's name
+You should now be able to see and access the Windows 11 SFTP server from Gershwin.
