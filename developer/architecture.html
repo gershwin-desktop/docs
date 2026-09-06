@@ -1,0 +1,211 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture &mdash; Gershwin Desktop  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=2b6f73ba" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Graphics hardware autoconfiguration" href="graphics.html" />
+    <link rel="prev" title="User Experience Guidelines" href="ux-guidelines.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Gershwin Desktop
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/components.html">Getting to know the system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reviewer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reviewer/guide.html">Reviewer Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ux-guidelines.html">User Experience Guidelines</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#frameworks">Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desktop-components">Desktop components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#workspace">Workspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#menu">Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windowmanager">WindowManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loginwindow">LoginWindow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#terminal">Terminal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#textedit">TextEdit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#systempreferences">SystemPreferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uibridge">UIBridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initgfx">initgfx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#applications">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preferences">Preferences</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">Graphics hardware autoconfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary-compatibility.html">Binary Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application-bundles.html">Application Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Global Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer-tools.html">Developer Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building.html">Building Gershwin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monkey-patch.html">Monkey Patching Live ISOs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracing.html">Tracing with DTrace/dtruss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localization.html">Localization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="man.html">Writing man pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uibridge.html">UIBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi.html">Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributions.html">Note to distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gershwin Desktop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Architecture</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gershwin-desktop/docs/blob/main/developer/architecture.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Link to this heading"></a></h1>
+<p>Gershwin is designed with simplicity in mind. Less, but better. This page describes key elements of the Gershwin desktop. Everything should be welcoming to switchers from other operating systems but ideally even easier to use.</p>
+<section id="frameworks">
+<h2>Frameworks<a class="headerlink" href="#frameworks" title="Link to this heading"></a></h2>
+<p>GNUstep is the core application framework. All native Gershwin applications are written in Objective-C using GNUstep.</p>
+</section>
+<section id="desktop-components">
+<h2>Desktop components<a class="headerlink" href="#desktop-components" title="Link to this heading"></a></h2>
+<p>The minimum number of components viable to produce an efficient desktop should be used. Each component should be as simple as possible, and have as few dependencies as possible (besides the ones that are central to Gershwin, such as GNUstep). XDG specifications are considered overly complex but insufficient and should be avoided; they may be acceptable as legacy technology for compatibility reasons.</p>
+<section id="workspace">
+<h3>Workspace<a class="headerlink" href="#workspace" title="Link to this heading"></a></h3>
+<p>File manager that manages <code class="docutils literal notranslate"><span class="pre">.app</span></code> bundles and provides the Desktop. Contains the Dock (application launcher), desktop icons, and file browsing. Source: <code class="docutils literal notranslate"><span class="pre">gershwin-workspace/Workspace/</span></code>.</p>
+</section>
+<section id="menu">
+<h3>Menu<a class="headerlink" href="#menu" title="Link to this heading"></a></h3>
+<p>Global menu bar that displays system-wide commands and the active application’s menus. Implements native GNUstep menu export via the Eau theme, Canonical AppMenu via D-Bus, and legacy Gtk2/3 menu support. Source: <code class="docutils literal notranslate"><span class="pre">gershwin-components/Menu/</span></code>.</p>
+</section>
+<section id="windowmanager">
+<h3>WindowManager<a class="headerlink" href="#windowmanager" title="Link to this heading"></a></h3>
+<p>Native X11 window manager written for Gershwin. Handles window positioning, resizing, focus management, compositing, and window switching (Overview). Source: <code class="docutils literal notranslate"><span class="pre">gershwin-windowmanager/WindowManager/</span></code>.</p>
+</section>
+<section id="loginwindow">
+<h3>LoginWindow<a class="headerlink" href="#loginwindow" title="Link to this heading"></a></h3>
+<p>Graphical login screen. Source: <code class="docutils literal notranslate"><span class="pre">gershwin-components/LoginWindow/</span></code>.</p>
+</section>
+<section id="terminal">
+<h3>Terminal<a class="headerlink" href="#terminal" title="Link to this heading"></a></h3>
+<p>Terminal emulator application. Source: <code class="docutils literal notranslate"><span class="pre">gershwin-terminal/</span></code>.</p>
+</section>
+<section id="textedit">
+<h3>TextEdit<a class="headerlink" href="#textedit" title="Link to this heading"></a></h3>
+<p>Text editor application. Source: <code class="docutils literal notranslate"><span class="pre">gershwin-textedit/</span></code>.</p>
+</section>
+<section id="systempreferences">
+<h3>SystemPreferences<a class="headerlink" href="#systempreferences" title="Link to this heading"></a></h3>
+<p>System settings application with pluggable preference panes. Source: <code class="docutils literal notranslate"><span class="pre">gershwin-systempreferences/SystemPreferences/</span></code>.</p>
+</section>
+<section id="uibridge">
+<h3>UIBridge<a class="headerlink" href="#uibridge" title="Link to this heading"></a></h3>
+<p>MCP server for automating and inspecting GNUstep applications at runtime. Source: <code class="docutils literal notranslate"><span class="pre">gershwin-components/UIBridge/</span></code>.</p>
+</section>
+<section id="initgfx">
+<h3>initgfx<a class="headerlink" href="#initgfx" title="Link to this heading"></a></h3>
+<p>Automatic graphics hardware configuration. Source: <code class="docutils literal notranslate"><span class="pre">gershwin-components/initgfx/</span></code>.</p>
+</section>
+</section>
+<section id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h2>
+<p>Applications must not need to be installed. Simply downloading them, attaching an external drive containing them, or connecting to a network share containing them must be sufficient. Multiple versions of the same application must be able to co-exist.</p>
+<p>Custom-written applications should come as application bundles whenever possible. It is acceptable for pre-existing applications to come with legacy XDG desktop files instead.</p>
+</section>
+<section id="utilities">
+<h2>Utilities<a class="headerlink" href="#utilities" title="Link to this heading"></a></h2>
+<p>Gershwin comes with commonly used utilities, such as a Terminal application, a Process Monitor application, etc. These are just regular applications bundled with the system.</p>
+</section>
+<section id="preferences">
+<h2>Preferences<a class="headerlink" href="#preferences" title="Link to this heading"></a></h2>
+<p>Gershwin comes with preference panels for commonly used settings, such as for configuring the network, keyboard, display, and other system options.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ux-guidelines.html" class="btn btn-neutral float-left" title="User Experience Guidelines" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="graphics.html" class="btn btn-neutral float-right" title="Graphics hardware autoconfiguration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

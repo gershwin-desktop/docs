@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UIBridge &mdash; Gershwin Desktop  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=2b6f73ba" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Raspberry Pi" href="rpi.html" />
+    <link rel="prev" title="Writing man pages" href="man.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Gershwin Desktop
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/components.html">Getting to know the system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reviewer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reviewer/guide.html">Reviewer Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ux-guidelines.html">User Experience Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">Graphics hardware autoconfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary-compatibility.html">Binary Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application-bundles.html">Application Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Global Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer-tools.html">Developer Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building.html">Building Gershwin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monkey-patch.html">Monkey Patching Live ISOs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracing.html">Tracing with DTrace/dtruss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localization.html">Localization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="man.html">Writing man pages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">UIBridge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-in-vscode">Installation in VSCode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#core-tools">Core tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#application-lifecycle">Application lifecycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ui-introspection">UI introspection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interaction-and-control">Interaction and control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x11-window-queries">X11 window queries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#logging">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-from-source">Building from source</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rpi.html">Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributions.html">Note to distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gershwin Desktop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">UIBridge</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gershwin-desktop/docs/blob/main/developer/uibridge.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="uibridge">
+<h1>UIBridge<a class="headerlink" href="#uibridge" title="Link to this heading"></a></h1>
+<p>UIBridge is a <a class="reference external" href="https://en.wikipedia.org/wiki/Model_Context_Protocol">Model Context Protocol (MCP)</a> server for automating and inspecting GNUstep applications.
+You (or your AI agents) can use it to programmatically explore, control, and test real UI state and user-flows.</p>
+<p>Typical workflow: Launch app -&gt; list apps -&gt; inspect UI tree -&gt; drive app via selectors or X11 input.</p>
+<section id="how-it-works">
+<h2>How it works<a class="headerlink" href="#how-it-works" title="Link to this heading"></a></h2>
+<p>UIBridge consists of three parts:</p>
+<ul class="simple">
+<li><p><strong>Eau Theme UIBridge Service</strong>: A component within the Eau theme that runs inside each target application’s memory space, providing access to the Objective-C runtime via Distributed Objects.</p></li>
+<li><p><strong>UIBridge Server</strong>: An MCP-compliant coordinator (<code class="docutils literal notranslate"><span class="pre">UIBridgeServer</span></code>) that manages the lifecycle of target applications and proxies requests between MCP clients and applications.</p></li>
+<li><p><strong>Common Interface</strong>: A shared protocol definition that ensures type-safe communication and consistent serialization of Objective-C objects.</p></li>
+</ul>
+</section>
+<section id="installation-in-vscode">
+<h2>Installation in VSCode<a class="headerlink" href="#installation-in-vscode" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Click on the “tools” icon in the text box that says “Describe what to build next” (where you enter text prompts)</p></li>
+<li><p>Click on the MCP icon in the “Configure Tools” popover (the leftmost of the three icons in the upper right corner of the popover)</p></li>
+<li><p>Select “Command (stdio)”</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">/System/Library/Tools/UIBridgeServer</span></code></p></li>
+<li><p>Enter a name, e.g., <code class="docutils literal notranslate"><span class="pre">uibridge</span></code></p></li>
+<li><p>On the left-hand side of VSCode, in the Extensions tab, you should now see the <code class="docutils literal notranslate"><span class="pre">uibridge</span></code> as an installed MCP server</p></li>
+<li><p>You can start, restart, view logs from there using the cog icon</p></li>
+</ul>
+<p>Alternatively, you can add <code class="docutils literal notranslate"><span class="pre">~/.config/Code/User/mcp.json</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;servers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;uibridge&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stdio&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/System/Library/Tools/UIBridgeServer&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="core-tools">
+<h2>Core tools<a class="headerlink" href="#core-tools" title="Link to this heading"></a></h2>
+<section id="application-lifecycle">
+<h3>Application lifecycle<a class="headerlink" href="#application-lifecycle" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>launch_app</strong>: Launch a GNUstep application. The application will automatically register its UIBridge service via Distributed Objects if it uses the Eau theme.</p></li>
+<li><p><strong>list_apps</strong>: List all available GNUstep applications found in standard system directories.</p></li>
+</ul>
+</section>
+<section id="ui-introspection">
+<h3>UI introspection<a class="headerlink" href="#ui-introspection" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>get_root</strong>: Retrieve the root objects of the target application (NSApp and open windows).</p></li>
+<li><p><strong>get_object_details</strong>: Fetch detailed state for a specific object (class name, frame, titles, children).</p></li>
+<li><p><strong>list_menus</strong>: Retrieve the entire menu hierarchy of the application.</p></li>
+</ul>
+</section>
+<section id="interaction-and-control">
+<h3>Interaction and control<a class="headerlink" href="#interaction-and-control" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>invoke_selector</strong>: Invoke an Objective-C selector on a remote object (<code class="docutils literal notranslate"><span class="pre">object_id</span></code>, <code class="docutils literal notranslate"><span class="pre">selector</span></code>, optional <code class="docutils literal notranslate"><span class="pre">args</span></code>).</p></li>
+<li><p><strong>invoke_menu_item</strong>: Trigger the action associated with an <code class="docutils literal notranslate"><span class="pre">NSMenuItem</span></code>.</p></li>
+<li><p><strong>x11_mouse_move</strong>, <strong>x11_click</strong>, <strong>x11_type</strong>: Simulate hardware input events directly via the X server.</p></li>
+<li><p><strong>lldb_exec</strong>: Execute an arbitrary command via LLDB attached to the target process. Use for deep state analysis or memory inspection.</p></li>
+</ul>
+</section>
+<section id="x11-window-queries">
+<h3>X11 window queries<a class="headerlink" href="#x11-window-queries" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>x11_list_windows</strong>: Query the X11 window tree.</p></li>
+<li><p><strong>x11_window_info</strong>: Query geometry and properties of a specific X11 window.</p></li>
+</ul>
+</section>
+</section>
+<section id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Link to this heading"></a></h2>
+<p>All internal diagnostic logs are written to <code class="docutils literal notranslate"><span class="pre">/tmp/uibridge.log</span></code>. You can monitor them with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>tail<span class="w"> </span>-f<span class="w"> </span>/tmp/uibridge.log
+</pre></div>
+</div>
+</section>
+<section id="building-from-source">
+<h2>Building from source<a class="headerlink" href="#building-from-source" title="Link to this heading"></a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>Server
+<span class="gp">$ </span>make
+<span class="gp">$ </span>sudo<span class="w"> </span>make<span class="w"> </span>install
+</pre></div>
+</div>
+<p>The server installs to <code class="docutils literal notranslate"><span class="pre">GNUSTEP_SYSTEM_TOOLS</span></code> (default: <code class="docutils literal notranslate"><span class="pre">/System/Library/Tools</span></code>).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="man.html" class="btn btn-neutral float-left" title="Writing man pages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rpi.html" class="btn btn-neutral float-right" title="Raspberry Pi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

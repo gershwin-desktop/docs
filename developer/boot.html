@@ -1,0 +1,163 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boot Process &mdash; Gershwin Desktop  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=2b6f73ba" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Gershwin Desktop
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/components.html">Getting to know the system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reviewer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reviewer/guide.html">Reviewer Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ux-guidelines.html">User Experience Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">Graphics hardware autoconfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary-compatibility.html">Binary Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application-bundles.html">Application Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Global Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer-tools.html">Developer Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building.html">Building Gershwin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monkey-patch.html">Monkey Patching Live ISOs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracing.html">Tracing with DTrace/dtruss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localization.html">Localization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="man.html">Writing man pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uibridge.html">UIBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi.html">Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributions.html">Note to distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gershwin Desktop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Boot Process</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gershwin-desktop/docs/blob/main/developer/boot.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="boot-process">
+<h1>Boot Process<a class="headerlink" href="#boot-process" title="Link to this heading"></a></h1>
+<p>Gershwin boots via the underlying operating system’s init system, then starts the Gershwin session.</p>
+<section id="system-preparation">
+<h2>System preparation<a class="headerlink" href="#system-preparation" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">/System/Library/Scripts/SystemPrepare.sh</span></code> configures the system to boot into Gershwin Desktop. It sets up the environment, prepares display managers, and configures autologin if desired.</p>
+</section>
+<section id="session-startup">
+<h2>Session startup<a class="headerlink" href="#session-startup" title="Link to this heading"></a></h2>
+<p>On login, the session is started via one of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">startx</span> <span class="pre">/System/Library/Scripts/Gershwin.sh</span></code> (manual X start)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/System/Library/Scripts/LoginWindow.sh</span></code> (launches login window, which starts X)</p></li>
+<li><p>On FreeBSD/GhostBSD: <code class="docutils literal notranslate"><span class="pre">service</span> <span class="pre">loginwindow</span> <span class="pre">start</span></code></p></li>
+</ul>
+</section>
+<section id="loginwindow">
+<h2>LoginWindow<a class="headerlink" href="#loginwindow" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">LoginWindow</span></code> app (<code class="docutils literal notranslate"><span class="pre">gershwin-components/LoginWindow/</span></code>) provides the graphical login screen. It handles user authentication and starts the user’s Gershwin session.</p>
+</section>
+<section id="gershwin-sh">
+<h2>Gershwin.sh<a class="headerlink" href="#gershwin-sh" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">/System/Library/Scripts/Gershwin.sh</span></code> is the session startup script. It:</p>
+<ul class="simple">
+<li><p>Sources the GNUstep environment (<code class="docutils literal notranslate"><span class="pre">GNUstep.sh</span></code>)</p></li>
+<li><p>Starts the WindowManager</p></li>
+<li><p>Starts the Menu bar</p></li>
+<li><p>Starts Workspace</p></li>
+<li><p>Starts other session components</p></li>
+</ul>
+</section>
+<section id="monkey-patching">
+<h2>Monkey patching<a class="headerlink" href="#monkey-patching" title="Link to this heading"></a></h2>
+<p>For rapid development, the live ISO boot process supports monkey patching. See <code class="docutils literal notranslate"><span class="pre">developer/monkey-patch</span></code> for details.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
