@@ -17,7 +17,7 @@ Official Raspberry Pi OS image. If you use the desktop version, then LoginWindow
 https://arm-files.devuan.org/RaspberryPi%20Latest%20Builds/, file `rpi-5-devuan-excalibur-*-arm64-ext4-*.zip`
 
 :::{note}
-As of January 25, 2026 this in known to be broken.
+As of early 2026, Devuan is known to have build issues.
 :::
 
 SSH is preconfigured and enabled on the Devuan images.
