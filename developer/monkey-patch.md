@@ -1,6 +1,6 @@
-# Monkey Patching (gershwin-on-ghostbsd)
+# Monkey Patching Live ISOs
 
-It is possible to [monkey patch](https://en.wikipedia.org/wiki/Monkey_patch) the running gershwin-on-ghostbsd Live ISO as early in the boot process as possible so that developers can make changes to all aspects of an existing Live ISO without having to re-create it and without having to write the ISO to a device each time a change is to be tested.
+It is possible to [monkey patch](https://en.wikipedia.org/wiki/Monkey_patch) the running Gershwin Live ISO as early in the boot process as possible so that developers can make changes to all aspects of an existing Live ISO without having to re-create it and without having to write the ISO to a device each time a change is to be tested.
 
 With that, it allows for a very rapid development-test cycle for Live ISOs.
 
@@ -12,7 +12,7 @@ This feature is currently under active development and its usage is still subjec
 
 Since an ISO file is read-only by design, the monkey patch feature allows to insert code into the early boot process from another loacation, e.g., from a USB stick.
 
-If the user tells the system to perform the monkey patching, the early boot scripts in gershwin-on-ghostbsd execute code provided by the user (outside of the ISO), then continues the normal boot process.
+If the user tells the system to perform the monkey patching, the early boot scripts execute code provided by the user (outside of the ISO), then continues the normal boot process.
 
 ## Creating the monkey patch volume
 
@@ -47,7 +47,7 @@ echo "HELLO DEVELOPERS"
 
 # Show a message to users in the boot process
 # This should be done only in rare cases since it destroys
-# the gershwin-on-ghostbsd zero-text boot experience
+# the Gershwin zero-text boot experience
 echo "HELLO MERE MORTALS" > /dev/console
 
 # Give users a chance to see the message

@@ -1,10 +1,14 @@
-# LoginWindow
+# Login Window
 
-**LoginWindow** is Gershwin's session manager and login manager. It provides the initial authentication interface when starting a Gershwin session.
+LoginWindow is the graphical login screen for Gershwin. It handles user authentication and session startup.
 
 ## Features
-* **Authentication**: Provides a secure login interface using PAM (Pluggable Authentication Modules).
-* **Session Management**: Manages the lifecycle of the Gershwin desktop session.
-* **Graphical Interface**: A clean, GNUstep-based interface that matches the overall look and feel of the system.
 
-LoginWindow ensures that only authorized users can access the system and that the environment is correctly initialized upon login.
+- User selection and authentication
+- Session type selection (if multiple are available)
+- Password entry with secure input
+- Automatic login support
+
+## Location
+
+Part of the Gershwin system; not an application the user launches directly.

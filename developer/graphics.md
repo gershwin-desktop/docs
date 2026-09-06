@@ -1,10 +1,6 @@
 # Graphics hardware autoconfiguration
 
-gershwin-on-ghostbsd may use `initgfx` in the future for the automatic configuration of the graphics hardware in your computer.
-
-:::{note}
-As of January 25, 2026 this is not integrated yet.
-:::
+Gershwin uses `initgfx` for automatic configuration of graphics hardware.
 
 ## Theory of operation
 
@@ -66,7 +62,7 @@ If applications that are using OpenGL crash on Nvidia systems, then it may be th
 
 ## Nvidia drivers
 
-Different versions of the Nvidia drivers exist. Unfortunately the latest version does not support all the earlier GPUs, so multiple versions of the Nvidia drivers are shipped with helloSystem to cover both new and older Nvidia GPUs. `initgfx` should automatically select a version suitable for the hardware in the computer.
+Different versions of the Nvidia drivers exist. Unfortunately the latest version does not support all the earlier GPUs, so multiple versions of the Nvidia drivers may be needed to cover both new and older Nvidia GPUs. `initgfx` should automatically select a version suitable for the hardware in the computer.
 
 To check this:
 

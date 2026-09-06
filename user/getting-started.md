@@ -1,21 +1,18 @@
 # Getting Started
 
-## Installation from source
-
-Follow https://github.com/gershwin-desktop/gershwin-build instructions.
-
 ## Live ISOs
 
-For testing, there are Live ISOs available at
-* https://github.com/gershwin-desktop/gershwin-on-ghostbsd (also want: FreeBSD)
-* https://github.com/gershwin-desktop/gershwin-on-arch (also want: Artix)
-* https://github.com/gershwin-desktop/gershwin-on-debian (also want: Devuan)
+For testing without installation, Live ISOs are available at the [Gershwin Desktop wiki](https://github.com/gershwin-desktop/gershwin-desktop/wiki).
+
+## Installation from source
+
+Follow the instructions at [gershwin-build](https://github.com/gershwin-desktop/gershwin-build).
 
 ## Raspberry Pi
 
-* https://github.com/gershwin-desktop/gershwin-desktop/wiki/Gershwin-on-Raspberry-Pi
+Gershwin runs well on Raspberry Pi 5 and Raspberry Pi 500. See `developer/rpi` for details.
 
 ## Getting help
 
-* https://github.com/orgs/gershwin-desktop/discussions
-* `#gershwin` on libera.chat (be aware that answers might take a few days, so stay around or use the discussions above)
+- [GitHub Discussions](https://github.com/orgs/gershwin-desktop/discussions)
+- `#gershwin` on libera.chat (answers may take a few days)

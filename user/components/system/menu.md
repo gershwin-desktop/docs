@@ -1,16 +1,18 @@
 # Menu
 
-The **Gershwin Menu bar** provides a global menu at the top of the screen, similar to classical desktop environments.
+The Menu application provides the global menu bar in Gershwin. It displays system-wide commands and the active application's menus in a unified menu bar at the top of the screen.
 
 ## Features
-* **Global Application Menu**: Displays the menu of the currently focused application.
-* **Multi-Toolkit Support**: Integrates with GNUstep, GTK, and other applications via standard DBus protocols.
-* **Status Items**: Displays system status icons and notifications on the right side of the menu bar.
-* **Seamless Transitions**: Uses advanced anti-flicker mechanisms for smooth menu updates when switching applications.
 
-The Menu bar ensures a consistent interface across different types of applications, providing a unified look and feel for the Gershwin desktop.
+- **Global menu bar**: Shows menus for the frontmost application
+- **Action search**: Search box to quickly find menu commands
+- **Multiple toolkit support**: Works with GNUstep apps, GTK apps, and Qt apps
+- **D-Bus integration**: Uses the Canonical AppMenu protocol for non-native applications
 
-## Components
-* **AppMenuWidget**: Responsible for displaying and interacting with the application menus.
-* **StatusItemManager**: Manages system status items and notifications.
-* **ActionSearch**: Provides functionality for searching through application menus and system actions.
+## Backends
+
+- **GNUstep native**: Uses the Eau theme's Distributed Objects IPC
+- **D-Bus AppMenu**: For Qt and other D-Bus aware applications
+- **GTK**: Legacy support for Gtk2/3 applications via D-Bus
+
+The Menu bar appears at the top of the screen and updates automatically when you switch applications.
