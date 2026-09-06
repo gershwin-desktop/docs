@@ -32,15 +32,17 @@ Using the Raspberry Pi Imager tool, flash the OS image file to a microSD card (i
 
 The rest is done via SSH, which is preconfigured on the Devuan image.
 
-Then follow https://github.com/gershwin-desktop/gershwin-build standard procedure:
+Then follow the standard
+[gershwin-developer](https://github.com/gershwin-desktop/gershwin-developer)
+procedure, as root:
 
 ```
 #  Get the rest of the requirements for building
-git clone https://github.com/gershwin-desktop/gershwin-build.git && cd gershwin-build
-sudo ./bootstrap.sh
-./checkout.sh
+git clone https://github.com/gershwin-desktop/gershwin-developer.git /Developer
+/Developer/Library/Scripts/bootstrap.sh
+/Developer/Library/Scripts/checkout.sh
 # Build and install Gershwin from sources
-sudo make install
+cd /Developer && make install
 ```
 
 Finally, run `/System/Library/Scripts/SystemPrepare.sh`. It will configure the system to boot straight into Gershwin Desktop. Reboot the system when it is done.
