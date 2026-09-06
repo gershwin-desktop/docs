@@ -1,5 +1,5 @@
 # Note to distributions
 
-The Gershwin Desktop is under active development, and things change rapidly. Hence, it is currently not recommended to attempt packaging the Gershwin Desktop in a traditional way. Instead, the use of [gershwin-build](https://github.com/gershwin-desktop/gershwin-build) is highly encouraged for the time being.
+The Gershwin Desktop is under active development, and things change rapidly. Hence, it is currently not recommended to attempt packaging the Gershwin Desktop in a traditional way. Instead, the use of [gershwin-developer](https://github.com/gershwin-desktop/gershwin-developer) is highly encouraged for the time being.
 
 Please do not hesitate to contact the team if you have questions regarding this policy.

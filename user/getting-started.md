@@ -6,7 +6,7 @@ For testing without installation, Live ISOs are available at the [Gershwin Deskt
 
 ## Installation from source
 
-Follow the instructions at [gershwin-build](https://github.com/gershwin-desktop/gershwin-build).
+Follow the instructions at [gershwin-developer](https://github.com/gershwin-desktop/gershwin-developer).
 
 ## Raspberry Pi
 
