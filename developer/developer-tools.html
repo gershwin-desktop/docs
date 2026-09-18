@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Tools &mdash; Gershwin Desktop  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=2b6f73ba" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Specifications" href="specifications.html" />
+    <link rel="prev" title="Global Menu" href="menu.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Gershwin Desktop
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/components.html">Getting to know the system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reviewer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reviewer/guide.html">Reviewer Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ux-guidelines.html">User Experience Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">Graphics hardware autoconfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary-compatibility.html">Binary Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application-bundles.html">Application Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Global Menu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#source-tree-layout">Source tree layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-system">Build system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#starting-gershwin">Starting Gershwin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building.html">Building Gershwin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monkey-patch.html">Monkey Patching Live ISOs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracing.html">Tracing with DTrace/dtruss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localization.html">Localization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="man.html">Writing man pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uibridge.html">UIBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpi.html">Raspberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributions.html">Note to distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gershwin Desktop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Developer Tools</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gershwin-desktop/docs/blob/main/developer/developer-tools.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="developer-tools">
+<h1>Developer Tools<a class="headerlink" href="#developer-tools" title="Link to this heading"></a></h1>
+<section id="source-tree-layout">
+<h2>Source tree layout<a class="headerlink" href="#source-tree-layout" title="Link to this heading"></a></h2>
+<p>The Gershwin source tree is organized under <code class="docutils literal notranslate"><span class="pre">/Developer/Library/Sources/</span></code>:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Directory</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gershwin-desktop/</span></code></p></td>
+<td><p>Live ISO build definitions</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gershwin-developer/</span></code></p></td>
+<td><p>Core development environment, bootstrapping scripts</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gershwin-components/</span></code></p></td>
+<td><p>Applications and system services (Menu, LoginWindow, etc.)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gershwin-workspace/</span></code></p></td>
+<td><p>File manager and desktop</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gershwin-windowmanager/</span></code></p></td>
+<td><p>Native X11 window manager</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gershwin-systempreferences/</span></code></p></td>
+<td><p>System Preferences app and preference panes</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gershwin-terminal/</span></code></p></td>
+<td><p>Terminal emulator</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gershwin-textedit/</span></code></p></td>
+<td><p>Text editor</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gershwin-eau-theme/</span></code></p></td>
+<td><p>GNUstep theme with global menu integration</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gershwin-system/</span></code></p></td>
+<td><p>System-level scripts and tools</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="build-system">
+<h2>Build system<a class="headerlink" href="#build-system" title="Link to this heading"></a></h2>
+<p>Gershwin uses GNUstep make (<code class="docutils literal notranslate"><span class="pre">tools-make</span></code>). Key targets in <code class="docutils literal notranslate"><span class="pre">gershwin-developer</span></code>:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Target</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">corelibs</span></code></p></td>
+<td><p>Build libobjc2, GNUstep base/gui/backend, and system infrastructure</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">workspace</span></code></p></td>
+<td><p>Build gershwin-workspace</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">windowmanager</span></code></p></td>
+<td><p>Build gershwin-windowmanager</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">components</span></code></p></td>
+<td><p>Build gershwin-components (Menu, LoginWindow, etc.)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">systempreferences</span></code></p></td>
+<td><p>Build gershwin-systempreferences</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">terminal</span></code></p></td>
+<td><p>Build gershwin-terminal</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">textedit</span></code></p></td>
+<td><p>Build gershwin-textedit</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="starting-gershwin">
+<h2>Starting Gershwin<a class="headerlink" href="#starting-gershwin" title="Link to this heading"></a></h2>
+<p>After installation, start Gershwin with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">startx /System/Library/Scripts/Gershwin.sh</span>
+</pre></div>
+</div>
+<p>Or use the login window:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/System/Library/Scripts/LoginWindow.sh</span>
+</pre></div>
+</div>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Unit tests</strong>: Run <code class="docutils literal notranslate"><span class="pre">gnustep-tests</span></code> from a component directory</p></li>
+<li><p><strong>UI testing</strong>: Use the <code class="docutils literal notranslate"><span class="pre">driveui</span></code> tool to drive running GNUstep apps</p></li>
+<li><p><strong>UIBridge</strong>: MCP server for programmatic UI inspection and automation (see <code class="docutils literal notranslate"><span class="pre">developer/uibridge</span></code>)</p></li>
+</ul>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>DTrace/dtruss</strong>: Available on FreeBSD; see <code class="docutils literal notranslate"><span class="pre">developer/tracing</span></code></p></li>
+<li><p><strong>LLDB</strong>: Use <code class="docutils literal notranslate"><span class="pre">lldb_exec</span></code> via UIBridge for deep process inspection</p></li>
+<li><p><strong>Logs</strong>: UIBridge writes diagnostics to <code class="docutils literal notranslate"><span class="pre">/tmp/uibridge.log</span></code></p></li>
+</ul>
+</section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://developer.gnustep.org/">GNUstep developer documentation</a></p></li>
+<li><p><a class="reference external" href="https://github.com/orgs/gershwin-desktop/discussions">Gershwin Discussions</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#gershwin</span></code> on irc.libera.chat</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="menu.html" class="btn btn-neutral float-left" title="Global Menu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="specifications.html" class="btn btn-neutral float-right" title="Specifications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
