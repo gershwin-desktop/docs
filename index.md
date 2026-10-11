@@ -44,6 +44,7 @@ developer/architecture
 developer/graphics
 developer/binary-compatibility
 developer/applications
+developer/frameworks
 developer/application-bundles
 developer/menu
 developer/developer-tools
